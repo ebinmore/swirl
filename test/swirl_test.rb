@@ -79,7 +79,7 @@ class SwirlTest < Test::Unit::TestCase
     sample_string = '<p>Latest Craze, cheese smoothies!</p>'
     swirl = Swirl.new
     swirl.add_html(sample_string)
-    swirl.use_affiliate_database(FakeCashWords.new)
+    swirl.use_affiliate_database(CashWords.new)
     output = swirl.money_making_html
     assert_include output, 'bigmoney.com'
   end
