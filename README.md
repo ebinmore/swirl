@@ -1,8 +1,8 @@
 # Swirl
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/swirl`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to Swirl! This is how we are monetizing our smoothie business by scanning for words our affiliates are willing to give us $$$ for linking!
 
-TODO: Delete this and the text above, and describe your gem
+To experiment with swirl, run `bin/console` for an interactive prompt.
 
 ## Installation
 
@@ -22,7 +22,22 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+While not super friendly, it works! To use Swirl, simply:
+```
+# Create a Swirl object
+swirly = Swirl.new()
+
+# Add in the html of your existing article
+swirly.add_html('<p>Can I have a glass of milk?</p>')
+
+# Add an affiliate look up database
+swirly.use_affiliate_database(<look up database object>)
+
+# Gets the profit making article's HTML.
+# returns a string with links surrounding words matched in the database.
+swirly.money_making_html()
+# => <p>Can I have a <a href="https://susanscornermart.com/fresh/glass?partner=smooth">glass</a> of <a href="https://targot.com/must-move/milk?partner=smooth">milk</a>?</p>
+```
 
 ## Development
 
