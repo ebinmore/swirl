@@ -17,8 +17,8 @@ module Swirl
     end
 
     def money_making_html
-      # 1) let's ensure that there's a CashWord object, otherwise raise an exception
-      raise NoAffiliateDatabaseError unless @cash_words
+      # 1) return the original html if no affiliate database is defined
+      return @html unless @cash_words
 
       puts "original_html = #{@html}"
       # 2) go through all the tokens in @html and see if they exist in @cash_words
