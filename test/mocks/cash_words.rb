@@ -1,6 +1,6 @@
 # Boss, I wrote a mocking library to make sure we are selecting the
 # highest amount from our affiliates
-class FakeCashWords
+class CashWords
   def has_word?(word) word == 'cheese'; end
   def get_links_for_word(word)
     [
