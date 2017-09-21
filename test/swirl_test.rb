@@ -8,7 +8,7 @@ class SwirlTest < Test::Unit::TestCase
   def test_basic_interface
     swirl = Swirl.new
 
-    assert(swirl.is_a?(Swirl),
+    assert(swirl.is_a?(Swirl::Parser),
           'Swirl should be able to be instantiated')
 
     assert(swirl.respond_to?(:add_html),
