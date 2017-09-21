@@ -84,11 +84,12 @@ class SwirlTest < Test::Unit::TestCase
     assert_include output, 'bigmoney.com'
   end
 
-  # Hey boss, I got stuck here, I'd really like to add a few tests
-  # to make sure we aren't mangling any of the HTML, but I wasn't sure
-  # how to do that ... also I am falling asleep
   def test_wont_mangle_the_html
-    omit("Need to help a friend out of the quagmire.")
-    assert false, "I was too tired to write this, please help me."
+    sample_string = '<p>Latest Craze, cheese smoothies and kale! </p>'
+    swirl = Swirl.new
+    swirl.add_html(sample_string)
+    swirl.use_affiliate_database(CashWords.new)
+    monetized_html = swirl.money_making_html
+    assert_equal monetized_html, Nokogiri::HTML::DocumentFragment.parse(monetized_html).to_html
   end
 end
