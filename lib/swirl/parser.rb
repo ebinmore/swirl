@@ -13,7 +13,7 @@ class Parser
     @cash_words = cash_words
   end
 
-  def markup_html
+  def money_making_html
     # do some magic here
   end
 
