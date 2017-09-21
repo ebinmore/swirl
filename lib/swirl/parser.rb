@@ -29,7 +29,7 @@ module Swirl
           # a) the token is a word in our affiliate database, so let's make some $$$!
           links = @cash_words.get_links_for_word(token.downcase)
           puts "links = #{links}"
-          monetized_html << "<a href=\"#{links.first[:url]}\">#{token}</a>"
+          monetized_html << "<a href=\"#{links.sort_by { |k| k["value"] }.last}\">#{token}</a>"
         else
           # b) no $$$ :-(
           monetized_html << token
