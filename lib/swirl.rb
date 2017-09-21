@@ -1,5 +1,8 @@
 require "swirl/version"
+require "swirl/parser"
 
 module Swirl
-  # Your code goes here...
+  def self.new
+    Parser.new
+  end
 end
